@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <menuitem id="holiday_homes_menu_root" name="Holiday Homes">
+        <menuitem id="holiday_homes_first_level_menu" name="Properties">
+            <menuitem id="holiday_homes_action_menu" action="property_details_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="property_details_action" model="ir.actions.act_window">
+        <field name="name">Property Details</field>
+        <field name="res_model">property.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No property for renting found, Please add your property over here</p>
+            <p>Use the top left
+                <strong>CREATE</strong> button to add new property type!!!
+            </p>
+        </field>
+    </record>
+    <record id="property_details_list_view" model="ir.ui.view">
+        <field name="name">Property details list view</field>
+        <field name="model">property.details</field>
+        <field name="arch" type="xml">
+            <tree string="Holiday Homes">
+                <field name="name"/>
+                <field name="country"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="property_details_form_view" model="ir.ui.view">
+        <field name="name">property details form view</field>
+        <field name="model">property.details</field>
+        <field name="arch" type="xml">
+            <form string="New property">
+                <header>
+                    <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <h1>
+                       <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="country"/>
+                        <field name="state"/>
+                    </group>
+                    <notebook>
+                        <page name="Details">
+                            
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
