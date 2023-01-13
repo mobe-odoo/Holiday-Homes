@@ -33,15 +33,25 @@
                 </header>
                 <sheet>
                     <h1>
-                       <field name="name"/>
+                       <field name="name" placeholder="Enter new Property"/>
                     </h1>
                     <group>
                         <field name="country"/>
                         <field name="state"/>
+                        <field name="pincode"/>
                     </group>
                     <notebook>
                         <page name="Details">
+                            <group>
+                                <field name="bedrooms"/>
+                                <field name="swimming_pool"/>
+                                <field name="rent"/>
+                            </group>
+                        </page>
+                        <page name="Booking">
                             
+                            <field name="booking_ids"></field>
+
                         </page>
                     </notebook>
                 </sheet>

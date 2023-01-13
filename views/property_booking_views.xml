@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="property_booking_tree_view" model="ir.ui.view">
+        <field name="name">Property Booking</field>
+        <field name="model">property.booking</field>
+        <field name="arch" type="xml">
+            <tree string="property booking">
+                <field name="name"></field>
+                <field name="phone"></field>
+                <field name="total_days"></field>
+                <field name="total_amount"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="property_booking_form_view" model="ir.ui.view">
+        <field name="name">New booking</field>
+        <field name="model">property.booking</field>
+        <field name="arch" type="xml">
+            <form string="New Booking">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="email"/>
+                    </group>
+                    <group>
+                        <field name="phone"/>
+                    <group>
+                    <group>
+                        <field name="age"/>
+                    <group>
+                    <notebook>
+                        <group>
+                            <field name="members"/>
+                        </group>
+                        <group>
+                            <field name="check_in"/>
+                            <field name="check_out"/>
+                        </group>
+                        <group>
+                            <field name="total_days"/>
+                        </group>
+                        <group>
+                            <field name="total_amount"/>
+                        </group>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
