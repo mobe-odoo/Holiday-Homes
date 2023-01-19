@@ -4,7 +4,7 @@
 from odoo import models,fields
 
 class HolidayHomesUsers(models.Model):
-    _name="holiday_homes_users"
+    _name="holiday.homes.users"
     _description="model to store the users"
 
     name=fields.Char('Name', required=True)

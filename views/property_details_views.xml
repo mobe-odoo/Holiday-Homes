@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <record id="property_details_action" model="ir.actions.act_window">
-        <field name="name">Property Details</field>
-        <field name="res_model">property.details</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">No property for renting found, Please add your property over here</p>
-            <p>Use the top left
-                <strong>CREATE</strong> button to add new property type!!!
-            </p>
-        </field>
-    </record>
     <record id="property_details_list_view" model="ir.ui.view">
         <field name="name">Property details list view</field>
         <field name="model">property.details</field>
         <field name="arch" type="xml">
             <tree string="Holiday Homes">
                 <field name="name"/>
-                <field name="country"/>
-                <field name="state"/>
+                <field name="pincode"/>
+                <field name="property_area"/>
+                <field name="bedrooms"/>
+                <field name="rent_amount"/>
             </tree>
         </field>
     </record>
@@ -32,30 +23,61 @@
                     <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
+                    <widget name="web_ribbon" title="On Rent"
+                                bg_color="bg-danger"
+                                attrs="{'invisible': [('status', '!=', 'on_rent')]}"/>
+                        <widget name="web_ribbon" title="Available"
+                                bg_color="bg-success"
+                                attrs="{'invisible': [('status', '!=', 'available')]}"/>
                     <h1>
                        <field name="name" placeholder="Enter new Property"/>
                     </h1>
                     <group>
+                        <field name="description"/>
+                        <field name="address"/>
                         <field name="country"/>
                         <field name="state"/>
                         <field name="pincode"/>
+                        <field name="property_area"/>
                     </group>
                     <notebook>
                         <page name="Details">
                             <group>
+                                <field name="available_from"/>
                                 <field name="bedrooms"/>
                                 <field name="swimming_pool"/>
-                                <field name="rent"/>
+                                <field name="rent_amount"/>
                             </group>
                         </page>
-                        <page name="Booking">
-                            
-                            <field name="booking_ids"></field>
-
+                        <page name="Booking">     
+                            <field name="booking_ids">
+                                 <tree>
+                                    <field name="name_id"/>
+                                    <field name="phone"/>
+                                    <field name="age"/> 
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+    
+    <record id="property_details_search_view" model="ir.ui.view">
+        <field name="name">Property Search View</field>
+        <field name="model">property.details</field>
+        <field name="arch" type="xml">
+            <search string="property_search">
+                <field name="name"/>
+                <field name="pincode"/>
+                <field name="property_area"/>
+                <field name="bedrooms"/>
+                <field name="rent_amount"/>
+                    <filter name="available" string="Available" domain="[('status', '=', 'available')]"/>
+                    <filter string="Bedrooms" name="group_by_bedrooms" context="{'group_by':'bedrooms'}"/>
+                    <filter name="swimming pool" string="Swimming Pool" domain="[('swimming_pool', '=', True)]"/>
+            </search>
         </field>
     </record>
 </odoo>

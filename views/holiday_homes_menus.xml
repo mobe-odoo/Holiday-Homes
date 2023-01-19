@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
+
+    <record id="property_details_action" model="ir.actions.act_window">
+        <field name="name">Property Details</field>
+        <field name="res_model">property.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No property for renting found, Please add your property over here</p>
+            <p>Use the top left
+                <strong>CREATE</strong> button to add new property type!!!
+            </p>
+        </field>
+    </record>
+
+    <record id="holiday_homes_users_action" model="ir.actions.act_window">
+        <field name="name">Holiday homes users</field>
+        <field name="res_model">holiday.homes.users</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No User found, Please add your name over here</p>
+            <p>Use the top left
+                <strong>CREATE</strong> button to add new user!!!
+            </p>
+        </field>
+    </record>
+    
     <menuitem id="holiday_homes_menu_root" name="Holiday Homes">
         <menuitem id="holiday_homes_first_level_menu" name="Properties">
             <menuitem id="holiday_homes_action_menu" action="property_details_action"/>
+        </menuitem>
+        <menuitem id="holiday_homes_users_first_level_menu" name="Users">
+            <menuitem id="holiday_homes_users_action_menu" action="holiday_homes_users_action"/>
         </menuitem>
     </menuitem>
 </odoo>

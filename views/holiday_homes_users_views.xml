@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+
+    <record id="holiday_homes_users_tree_view" model="ir.ui.view">
+        <field name="name">User name</field>
+        <field name="model">holiday.homes.users</field>
+        <field name="arch" type="xml">
+            <tree string="User Name">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="holiday_homes_users_form_view" model="ir.ui.view">
+        <field name="name">New User</field>
+        <field name="model">holiday.homes.users</field>
+        <field name="arch" type="xml">
+            <form string="Create new user">
+                <sheet>
+                   
+                    <h1>
+                        <field name="name" placeholder="Enter User Name"/>
+                    </h1>
+                    <notebook>
+                        <page name="Booking history" string="History">
+                            
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>  
+</odoo>

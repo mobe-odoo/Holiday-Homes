@@ -8,13 +8,17 @@ class PropeertyDetails(models.Model):
     _description="Details of all the properties"
 
     name=fields.Char('Name', required=True, placeholder="Enter property Name")
-    status=fields.Selection(string="Status",selection=[('new','New'),('offer_received','Offer received'),('offer_accepted','Offer accepted'),('sold','Sold'),('canceled','Canceled')],default='new',required=True)
+    description=fields.Text('Description')
+    address=fields.Text('Address', required=True)
+    status=fields.Selection(string="Status",selection=[('available','Available'),('on_rent','On rent')],default='available',required=True)
     country=fields.Many2one('res.country', string='Country', required=True)
     state=fields.Many2one('res.country.state', string='State', required=True)
     pincode=fields.Integer('Pin code', required=True)
     bedrooms=fields.Integer('No. of bedroom:', default=2)
+    property_area=fields.Integer('Property area sq.ft')
+    available_from=fields.Date('Available from:')
     customers=fields.Many2one('res.partner', string="Customers")
     swimming_pool=fields.Boolean('Swimming Pool')
-    rent=fields.Float('Rent', required=True)
+    rent_amount=fields.Float('Rent amount', required=True)
     booking_ids=fields.One2many('property.booking','booking_id', string="Booking")
     

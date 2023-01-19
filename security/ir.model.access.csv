@@ -1,3 +1,4 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 access_property_details,access_property_details,model_property_details,,1,1,1,1
 access_property_booking,access_property_booking,model_property_booking,,1,1,1,1
+access_holiday_homes_users,access_holiday_homes_users,model_holiday_homes_users,,1,1,1,1
