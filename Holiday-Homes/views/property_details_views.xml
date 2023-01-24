@@ -32,6 +32,7 @@
                     <h1>
                        <field name="name" placeholder="Enter new Property"/>
                     </h1>
+                        <field name="image" widget="image" class="oe_avatar" />
                     <group>
                         <field name="description"/>
                         <field name="address"/>
@@ -50,16 +51,17 @@
                             </group>
                         </page>
                         <page name="Booking">     
-                            <field name="booking_ids">
-                                 <tree>
-                                    <field name="name_id"/>
-                                    <field name="phone"/>
-                                    <field name="age"/> 
-                                </tree>
-                            </field>
+                            <field name="booking_ids"/>
                         </page>
                     </notebook>
                 </sheet>
+                
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                    <field name="activity_ids" />
+                </div>
+
             </form>
         </field>
     </record>

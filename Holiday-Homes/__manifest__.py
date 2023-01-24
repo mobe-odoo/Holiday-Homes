@@ -4,17 +4,18 @@
 {
     'name' : 'Holiday Homes',
     'version' : '1.0',
-    'depends' : [],
+    'depends' : ['mail'],
     'author' : 'mobe',
     'data' : [
         'security/ir.model.access.csv',
+        'views/holiday_homes_menus.xml',
         'views/property_details_views.xml',
         'views/property_booking_views.xml',
         'views/holiday_homes_users_views.xml',
-        'views/holiday_homes_menus.xml',
+      
     ],
     'demo' : [
-
+        # 'demo/property_details_demo.xml',
     ],
     'application' : True,
     'installable' : True,

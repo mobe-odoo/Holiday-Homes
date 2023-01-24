@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="property_details_demo1" model="property.details">
+        <field name="name">Cascar House</field>
+        <field name="description">Very beautiful house for spending your precious time with your loved ones!!!</field>
+        <field name="address">plot no-2 , cascar house,  lokhandwala, Maharashtra.</field>
+        <field name="pincode">123456</field>
+        <field name="property_area">120</field>
+        <field name="swimming_pool">True</field>
+        <field name="bedrooms">4</field>
+        <field name="rent_amount">12,000</field>
+    </record>
+
+    <record id="property_details_demo2" model="property.details">
+        <field name="name">Sunrise Villa</field>
+        <field name="description">A beautiful villa to spend your valuable time by enjoying the sunrise.</field>
+        <field name="address">sunrise villa, sector 2, Gandhinagar</field>
+        <field name="pincode">500,433</field>
+        <field name="property_area">200</field>
+        <field name="swimming_pool">True</field>
+        <field name="bedrooms">5</field>
+        <field name="rent_amount">15,000</field>
+    </record>
+
+    <record id="property_details_demo3" model="property.details">
+        <field name="name">Sea facing appartment</field>
+        <field name="description">Sea facing appartment at prime location in Mumbai with the best view.</field>
+        <field name="address">U-1002, Badal appartment, near Juhu beach, Mumbai, Maharashtra</field>
+        <field name="pincode">301,233</field>
+        <field name="property_area">110</field>
+        <field name="swimming_pool">True</field>
+        <field name="bedrooms">3</field>
+        <field name="rent_amount">18,000</field>
+    </record>
+
+</odoo>
