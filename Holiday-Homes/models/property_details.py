@@ -3,6 +3,8 @@
 
 from odoo import api,models,fields
 from datetime import date
+from odoo.exceptions import UserError, ValidationError
+
 
 class PropeertyDetails(models.Model):
     _name="property.details"
@@ -19,15 +21,15 @@ class PropeertyDetails(models.Model):
     pincode=fields.Integer('Pin code', required=True)
     bedrooms=fields.Integer('No. of bedroom:', default=2)
     property_area=fields.Integer('Property area sq.ft')
-    available_from=fields.Date('Available from:' ,default=date.today(), compute="_compute_available_date")
-    customers=fields.Many2one('res.partner', string="Customers")
+    customers_id=fields.Many2one('res.partner', string="Customers")
     swimming_pool=fields.Boolean('Swimming Pool')
     rent_amount=fields.Float('Rent amount', required=True)
     booking_ids=fields.One2many('property.booking','booking_id', string="Booking")
-    
-    @api.depends('booking_ids')
-    def _compute_available_date(self):
-        latest_rec = self.env['property.booking'].search([], limit=1, order='check_out desc')
+    buyer_id=fields.Many2one('res.partner', copy=False, string="user")
+   
+    def action_confirm(self):
         for record in self:
-            record.available_from = latest_rec.check_out
+            if record.status=="on_rent":
+                raise UserError("A rented property cannot be booked")
+            record.status="on_rent"
        

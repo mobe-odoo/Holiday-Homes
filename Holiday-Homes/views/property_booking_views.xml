@@ -19,6 +19,7 @@
             <form string="New Booking">
                 <sheet>
                     <group>
+                        <!-- <group><field name="available_from"/></group> -->
                         <group><field name="name_id"/></group>
                         <group><field name="email"/></group>
                         <group><field name="phone"/></group>

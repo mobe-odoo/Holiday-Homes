@@ -20,15 +20,13 @@
         <field name="arch" type="xml">
             <form string="New property">
                 <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"/>
+                    <!-- <button name="action_cancel" type="object" string="Cancel"/> -->
                     <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
-                    <widget name="web_ribbon" title="On Rent"
-                                bg_color="bg-danger"
-                                attrs="{'invisible': [('status', '!=', 'on_rent')]}"/>
-                        <widget name="web_ribbon" title="Available"
-                                bg_color="bg-success"
-                                attrs="{'invisible': [('status', '!=', 'available')]}"/>
+                    <widget name="web_ribbon" title="On Rent" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'on_rent')]}"/>
+                    <widget name="web_ribbon" title="Available" bg_color="bg-success" attrs="{'invisible': [('status', '!=', 'available')]}"/>
                     <h1>
                        <field name="name" placeholder="Enter new Property"/>
                     </h1>
@@ -44,7 +42,6 @@
                     <notebook>
                         <page name="Details">
                             <group>
-                                <field name="available_from"/>
                                 <field name="bedrooms"/>
                                 <field name="swimming_pool"/>
                                 <field name="rent_amount"/>
